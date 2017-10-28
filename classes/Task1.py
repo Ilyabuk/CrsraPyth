@@ -5,9 +5,27 @@
 # Make about 3 classes, e.g. 'worker', 'ceo', 'manager'. Implement the inheritance between them, add some features.
 # Realize functionality via web browser
 
-#csv?
+# csv?
 
-#1
-print("What do you want to do: write or write an objects?")
-inp1 = input()
-print(inp1)
+# 1
+def writeObj(name, surname, age, salary):
+    with open('/Users/Ilya/Desktop/workers.txt', 'a') as file:
+        s = name+' '+surname+' '+age+' '+salary+'\n'
+        file.write(s)
+
+def readObj(line):
+    with open('/Users/Ilya/Desktop/workers.txt', 'r') as file:
+#        for line, l in enumerate(file):
+ #           if l == line:
+  #              print(l)
+
+inp1 = input("What do you want to do: write or read an objects?\n")
+if inp1 == 'write':
+    inpN = input('Type a name\n')
+    inpS = input('Type a surname\n')
+    inpA = input('Type an age\n')
+    inpSl = input('Type a salary\n')
+    writeObj(inpN, inpS, inpA, inpSl)
+elif inp1 == 'read':
+    readObj(1)
+

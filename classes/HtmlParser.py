@@ -16,7 +16,3 @@ def printOddLine():
             digits+=letter
     return digits
 
-# if __name__ == '__main__':
-#     printFile()
-    # print(printOddLine())
-
