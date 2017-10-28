@@ -1,12 +1,22 @@
 from classes.ExceptionLog import logg
 
 text = 'Empty'
-try:
-    # file = open('/Users/Ilya/Desktop/workfile1.txt', mode='r', encoding='UTF-8')
-    file = open('C:\\Users\\bukreyev\\Desktop\\workfile11.txt', mode='r', encoding='UTF-8')
-    text = file.read()
-    file.close()
-except Exception as er1:
-    logg(er1)
+with open('/Users/Ilya/Desktop/workfile1.txt', mode='r') as file:
+    for i, line in enumerate(file):
+            print(i, line, sep='', end='')
 
-print('+++++++++++++\n', text.__str__(), sep='', end='\n+++++++++++++\n')
+
+def printFile():
+    print('+++++++++++++\n', text.__str__(), sep='', end='\n+++++++++++++\n')
+
+def printOddLine():
+    digits = ''
+    for letter in text:
+        if letter.isdigit():
+            digits+=letter
+    return digits
+
+# if __name__ == '__main__':
+#     printFile()
+    # print(printOddLine())
+
